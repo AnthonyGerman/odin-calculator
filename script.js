@@ -17,7 +17,7 @@ const btnclear = document.querySelector('.clear');
 const display = document.querySelector("div");
 
 function add (x, y) {
-    return x + y;
+    return parseInt(x) + parseInt(y);
 }
 
 function subtract (x, y) {
@@ -109,6 +109,12 @@ btnslash.addEventListener("click", () => {
 
 btnclear.addEventListener("click", () => {
     displayValue = "";
+    display.textContent = displayValue;
+});
+
+btnequals.addEventListener("click", () => {
+    let array = displayValue.split(" ");
+    displayValue = operate(array[0], array[1], array[2]);
     display.textContent = displayValue;
 });
 
